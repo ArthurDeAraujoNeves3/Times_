@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Reset das configuracoes padroes do site*/
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/*Ubuntu Regular*/
+@font-face {
+
+  font-family: "ubuntuRegular";
+  src: url("./src/fonts/ubuntu/Ubuntu-Regular.ttf");
+}
+/*Ubuntu Medium*/
+@font-face {
+
+  font-family: "ubuntuMedium";
+  src: url("./src/fonts/ubuntu/Ubuntu-Medium.ttf");
+}
+
+body {
+
+  background-color: #ECE3CE;
+  font-family: "ubuntuRegular";
+}
