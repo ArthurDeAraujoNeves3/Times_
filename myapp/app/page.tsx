@@ -1,16 +1,16 @@
 import Header from "./src/components/layout/Header";
+import Relogio from "./src/components/Relogio";
 
 export default function Home() {
 
   return (
 
-    <div className="flex p-2 gap-2">
+    <div className="relative flex h-full">
 
-      <Header/>
+      <div className="overflow-x-hidden">
 
-      <div className="bg-red-500 w-screen h-auto rounded-lg overflow-y-scroll overflow-x-hidden p-5">
-
-        conteudo
+        <Relogio/>
+        
       </div> {/*Conteudo*/}
 
     </div>

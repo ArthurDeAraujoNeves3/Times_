@@ -18,6 +18,14 @@ const config: Config = {
         'green-400-a': '#F8FB77',
         'green-500-a': '#CCCE5E',
       },
+      screens: {
+
+        '2xl': {'max': '1535px'},
+        'xl': {'max': '1279px'},
+        'lg': {'max': '1024px'},
+        'md': {'max': '800px'},
+        'sm': {'max': '600px'},
+      },
     },
   },
   plugins: [],

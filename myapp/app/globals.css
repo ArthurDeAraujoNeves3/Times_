@@ -28,4 +28,7 @@ body {
 
   background-color: #ECE3CE;
   font-family: "ubuntuRegular";
+  overflow: hidden;
+  padding: 8px;
+  height: 100vh;
 }
