@@ -1,5 +1,5 @@
 import Header from "./src/components/layout/Header";
-import Relogio from "./src/components/Relogio";
+import Relogio from "./src/components/Pages/Relogio";
 
 export default function Home() {
 
