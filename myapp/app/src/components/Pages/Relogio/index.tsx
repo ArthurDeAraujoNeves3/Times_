@@ -11,31 +11,42 @@ export default function Relogio() {
     const[ hours, setHours ] = useState(0);
     const[ min, setMin ] = useState(0);
     const[ seg, setSeg ] = useState(0);
-    const timer = useRef();
+    const[ hoursEdit, setHoursEdit ] = useState(0);
+    const[ minEdit, setMinEdit ] = useState(0);
+    const[ segEdit, setSegEdit ] = useState(0);
+    const timer = useRef(); //setInterval
     
     //Definindo horas
     function defineHours(e) {
 
-        setHours(Number(e.target.value));
+        setHoursEdit(Number(e.target.value));
     }
     //Definindo minutos
     function defineMin(e) {
 
-        setMin(Number(e.target.value));
+        setMinEdit(Number(e.target.value));
     }
     //Definindo segundos
     function defineSeg(e) {
 
-        setSeg(Number(e.target.value));
+        setSegEdit(Number(e.target.value));
     }
+    //Confirmar a edicao de dados
+    function ConfirmeEdit() {
+
+        setEditTimerModal(false);
+        setHours(hoursEdit);
+        setMin(minEdit);
+        setSeg(segEdit);
+        setTimeTotal(`${hours <= 9 ? `0${hours}` : hours}:${min <= 9 ? `0${min}` : min}:${seg <= 9 ? `0${seg}` : seg}`);
+    }
+    //Cancelar edicao de dados
     function CancelEdit() {
 
         setEditTimerModal(false);
-    }
-    function ConfirmeEdit() {
-
-        setHours(hoursEdit);
-        setEditTimerModal(false);
+        setHoursEdit(0);
+        setMinEdit(0);
+        setSegEdit(0);
     }
     //Editar tempo
     function editTimer() {
@@ -119,7 +130,7 @@ export default function Relogio() {
 
             {editTimerModal ? <div className="absolute z-10 bg-black/30 backdrop-blur-sm w-full h-full"></div> : <></>} {/*Fundo do modal*/}
             {editTimerModal == true ? <EditTimer onClickCancel={CancelEdit} onClickConfirme={ConfirmeEdit} onChangeHours={defineHours} onChangeMin={defineMin} onChangeSeg={defineSeg} hours={hours} min={min} seg={seg}/> : <></>} {/*Modal para editar tempo*/}
-
+            
             <Timer hours={hours} min={min} seg={seg} onClickEdit={editTimer} onClickPlay={playTimer} onClickReset={resetTimer} tempoAtivo={tempoAtivo} timeTotal={timeTotal}/> {/*Temporizador*/}
 
         </>
