@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Times',
+  title: 'times',
   description: 'Gerencie o seu tempo com times.',
 }
 

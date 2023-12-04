@@ -3,11 +3,10 @@ import { useEffect, useState, useRef } from "react";
 import Timer from "../../Timer";
 import EditTimer from "../../EditTimer";
 
-export default function Relogio() {
+export default function Cronometro() {
 
     const[ editTimerModal, setEditTimerModal ] = useState(false);
     const[ tempoAtivo, setTempoAtivo ] = useState(false);
-    const[ timeTotal, setTimeTotal ] = useState("00:00:00");
     const[ hours, setHours ] = useState(0);
     const[ min, setMin ] = useState(0);
     const[ seg, setSeg ] = useState(0);
@@ -20,34 +19,33 @@ export default function Relogio() {
     function defineHours(e) {
 
         setHoursEdit(Number(e.target.value));
-    }
+    };
     //Definindo minutos
     function defineMin(e) {
 
         setMinEdit(Number(e.target.value));
-    }
+    };
     //Definindo segundos
     function defineSeg(e) {
 
         setSegEdit(Number(e.target.value));
-    }
+    };
     //Confirmar a edicao de dados
-    function ConfirmeEdit() {
+    function confirmeEdit() {
 
         setEditTimerModal(false);
         setHours(hoursEdit);
         setMin(minEdit);
         setSeg(segEdit);
-        setTimeTotal(`${hours <= 9 ? `0${hours}` : hours}:${min <= 9 ? `0${min}` : min}:${seg <= 9 ? `0${seg}` : seg}`);
-    }
+    };
     //Cancelar edicao de dados
-    function CancelEdit() {
+    function cancelEdit() {
 
         setEditTimerModal(false);
         setHoursEdit(0);
         setMinEdit(0);
         setSegEdit(0);
-    }
+    };
     //Editar tempo
     function editTimer() {
 
@@ -59,7 +57,7 @@ export default function Relogio() {
 
             setEditTimerModal(false);
         }
-    }
+    };
     //Iniciar tempo
     function playTimer() {
 
@@ -71,7 +69,7 @@ export default function Relogio() {
 
             setTempoAtivo(false);
         }
-    }
+    };
     //Reiniciar tempo
     function resetTimer() {
 
@@ -79,7 +77,7 @@ export default function Relogio() {
         setMin(0);
         setSeg(0);
         setTempoAtivo(false);
-    }
+    };
 
     //Iniciar temporizador
     useEffect(() => {
@@ -129,9 +127,9 @@ export default function Relogio() {
         <>
 
             {editTimerModal ? <div className="absolute z-10 bg-black/30 backdrop-blur-sm w-full h-full"></div> : <></>} {/*Fundo do modal*/}
-            {editTimerModal == true ? <EditTimer onClickCancel={CancelEdit} onClickConfirme={ConfirmeEdit} onChangeHours={defineHours} onChangeMin={defineMin} onChangeSeg={defineSeg} hours={hours} min={min} seg={seg}/> : <></>} {/*Modal para editar tempo*/}
+            {editTimerModal == true ? <EditTimer onClickCancel={cancelEdit} onClickConfirme={confirmeEdit} onChangeHours={defineHours} onChangeMin={defineMin} onChangeSeg={defineSeg} hours={hours} min={min} seg={seg}/> : <></>} {/*Modal para editar tempo*/}
             
-            <Timer hours={hours} min={min} seg={seg} onClickEdit={editTimer} onClickPlay={playTimer} onClickReset={resetTimer} tempoAtivo={tempoAtivo} timeTotal={timeTotal}/> {/*Temporizador*/}
+            <Timer hours={hours} min={min} seg={seg} onClickEdit={editTimer} onClickPlay={playTimer} onClickReset={resetTimer} tempoAtivo={tempoAtivo} timeTotal={`${hoursEdit <= 9 ? `0${hoursEdit}` : hoursEdit}:${minEdit <= 9 ? `0${minEdit}` : minEdit}:${segEdit <= 9 ? `0${segEdit}` : segEdit}`}/> {/*Temporizador*/}
 
         </>
     );

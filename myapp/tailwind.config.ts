@@ -10,19 +10,17 @@ const config: Config = {
     extend: {
       colors: {
         
-        'beige-100-a': '#FFF6E0',
-        'beige-200-a': '#ECE3CE',
-        'green-100-a': '#3A4D39',
-        'green-200-a': '#4F6F52',
-        'green-300-a': '#84A783',
-        'green-400-a': '#F8FB77',
-        'green-500-a': '#CCCE5E',
+        'gray-100-a': '#838288',
+        'gray-200-a': '#343434',
+        'gray-300-a': '#171717',
+        'orange-100-a': '#FF5C00',
       },
       screens: {
 
         '2xl': {'max': '1535px'},
         'xl': {'max': '1279px'},
         'lg': {'max': '1024px'},
+        'lgMin': {'min': '1024px'},
         'md': {'max': '800px'},
         'sm': {'max': '600px'},
       },

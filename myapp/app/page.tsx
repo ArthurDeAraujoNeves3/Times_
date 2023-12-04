@@ -1,5 +1,5 @@
 import Header from "./src/components/layout/Header";
-import Relogio from "./src/components/Pages/Relogio";
+import Cronometro from "./src/components/Pages/Cronometro";
 
 export default function Home() {
 
@@ -7,12 +7,10 @@ export default function Home() {
 
     <div className="relative flex h-full">
 
-      <div className="overflow-x-hidden">
+      <Header/>
 
-        <Relogio/>
+      <Cronometro/>
         
-      </div> {/*Conteudo*/}
-
     </div>
 
   );
