@@ -38,13 +38,6 @@ export default function Header() {
                                 <p className="font-bold text-orange-100-a">Pomodoro</p>
                             </div>
                         </Link> {/*Btn pomodoro*/}
-                        <Link href="/relogio">
-                            <div className="flex flex-col items-center bg-white p-3 w-40 rounded-3xl cursor-pointer duration-[0.2s] hover:brightness-90">
-
-                                <BiWorld className="text-orange-100-a text-3xl"/>
-                                <p className="font-bold text-orange-100-a">Relógio</p>
-                            </div>
-                        </Link> {/*Btn relogio*/}
                         <Link href="/">
                             <div className="flex flex-col items-center bg-white p-3 w-40 rounded-3xl cursor-pointer duration-[0.2s] hover:brightness-90">
 
@@ -85,13 +78,6 @@ export default function Header() {
                         <p className="font-bold text-orange-100-a">Pomodoro</p>
                         </div>
                     </Link> {/*Btn pomodoro*/}
-                    <Link href="/relogio">
-                        <div className="flex flex-col items-center bg-white p-3 w-40 rounded-3xl cursor-pointer duration-[0.2s] hover:brightness-90">
-
-                        <BiWorld className="text-orange-100-a text-3xl"/>
-                        <p className="font-bold text-orange-100-a">Relógio</p>
-                        </div>
-                    </Link> {/*Btn relogio*/}
                     <Link href="/">
                         <div className="flex flex-col items-center bg-white p-3 w-40 rounded-3xl cursor-pointer duration-[0.2s] hover:brightness-90">
 
