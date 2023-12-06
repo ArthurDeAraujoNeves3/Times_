@@ -12,7 +12,7 @@ export default function Pomodoro() {
     const[ seg, setSeg ] = useState(0);
     const[ breaks, setBreaks ] = useState(0); //Pomodoro e short break
     const[ breakLong, setBreakLong ] = useState(0); //Break long
-    const timer = useRef(); //setInterval
+    const timer: any = useRef(); //setInterval
     
     //Editar tempo
     function editTimer() {

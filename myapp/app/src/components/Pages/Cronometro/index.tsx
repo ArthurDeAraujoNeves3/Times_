@@ -13,7 +13,7 @@ export default function Cronometro() {
     const[ hoursEdit, setHoursEdit ] = useState(0);
     const[ minEdit, setMinEdit ] = useState(0);
     const[ segEdit, setSegEdit ] = useState(0);
-    const timer = useRef(); //setInterval
+    const timer: any = useRef(); //setInterval
     
     //Definindo horas
     function defineHours(e) {

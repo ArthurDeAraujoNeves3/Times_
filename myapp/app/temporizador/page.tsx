@@ -14,7 +14,7 @@ export default function Temporizador() {
     const[ hoursEdit, setHoursEdit ] = useState(0);
     const[ minEdit, setMinEdit ] = useState(5);
     const[ segEdit, setSegEdit ] = useState(0);
-    const timer = useRef(); //setInterval
+    const timer: any = useRef(); //setInterval
     
     //Definindo horas
     function defineHours(e) {
