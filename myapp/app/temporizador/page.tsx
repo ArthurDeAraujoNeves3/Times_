@@ -17,17 +17,17 @@ export default function Temporizador() {
     const timer: any = useRef(); //setInterval
     
     //Definindo horas
-    function defineHours(e) {
+    function defineHours(e: any) {
 
         setHoursEdit(Number(e.target.value));
     };
     //Definindo minutos
-    function defineMin(e) {
+    function defineMin(e: any) {
 
         setMinEdit(Number(e.target.value));
     };
     //Definindo segundos
-    function defineSeg(e) {
+    function defineSeg(e: any) {
 
         setSegEdit(Number(e.target.value));
     };
